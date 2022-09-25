@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.fawry.movies.ui.fragment.main.PopularMoviesFragment"
+        android:label="Popular Movies" >
+        <action
+            android:id="@+id/action_movieFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.fawry.movies.ui.fragment.MovieDetailFragment"
+        android:label="Movie Details">
+        <argument
+            android:name="movie"
+            app:argType="com.fawry.movies.model.domain.MovieDomainModel" />
+    </fragment>
+</navigation>

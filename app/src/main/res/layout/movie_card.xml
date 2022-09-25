@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.fawry.movies.model.domain.MovieDomainModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_100sdp"
+                app:cardCornerRadius="@dimen/_9sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/MoviePoster"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="fitXY"
+                    app:poster="@{movie.poster_path}"
+                    tools:src="@tools:sample/backgrounds/scenic" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_3sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:text="@{movie.title}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    tools:text="Walid Magid mahmoud" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/overview_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:maxLines="3"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:text="@{movie.overview}"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@tools:sample/lorem/random" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/divider_grey" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
